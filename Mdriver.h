@@ -14,7 +14,7 @@ void LMotor(int MO){
       Serial.print(" left ");   
       } 
       digitalWrite(ledPin2, HIGH); 
-      LegMot.write(180);
+      LegMot.write(120);
       //analogWrite(BMOT_R, 0); 
       //analogWrite(BMOT_L, tempo); 
       break;
@@ -24,7 +24,7 @@ void LMotor(int MO){
       Serial.print(" right ");
       }
       digitalWrite(ledPin1, HIGH); 
-      LegMot.write(0);
+      LegMot.write(60);
       //analogWrite(BMOT_L, 0); 
       //analogWrite(BMOT_R, tempo);
       break; 
