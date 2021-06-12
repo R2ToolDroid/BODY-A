@@ -18,3 +18,5 @@
  
  SoftSerial to get commands (\r)
  HardSerial to get commads (\n)
+ 
+ ![Board](https://a.pololu-files.com/picture/0J9506.1200.jpg)
