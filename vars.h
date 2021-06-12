@@ -1,12 +1,13 @@
 #include <Arduino.h>                           
 
 String data; //Consohlen Input
-String VERSION = "2-04-21-HDDRC";
+String VERSION = "12-06-21-BODY-A";
 String output = "";
 
 #define DEBUG
 
 byte debug = true;
+/*
 long randNumber;
 long zeit;
 unsigned long previousMillis = 0;        // will store last time LED was updated
@@ -28,7 +29,7 @@ int domeStatus = 0;  // 0 = stopped, 1 = prepare to turn, 2 = turning
 int time360DomeTurn = 2500;  // milliseconds for dome to complete 360 turn at domeAutoSpeed - Valid Values: 2000 - 8000 (2000 = 2 seconds)
 byte domeAutoSpeed = 70;     // Speed used when dome automation is active - Valid Values: 50 - 100
 
-
+*/
 
 
 
@@ -55,10 +56,10 @@ int Sdiff = 0;
 
 #define DOME_PWM_OUT 16 // Dome PWR as Controller signal
 
-#define PWM_OUT 10 // PWM Holo V Movement
+#define PWM_OUT 10 // PWM POLOLU
 
 #define SENSOR_CENTER 8  //Center Sensor
-#define SENSOR_RC_IN 21  //PWM INPUT Sensor Dome Rotation
+//#define SENSOR_RC_IN 21  //PWM INPUT Sensor Dome Rotation
 
 #define LEG_POTI 9 // Position Reading Leg
 
