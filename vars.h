@@ -6,7 +6,7 @@ String output = "";
 
 #define DEBUG
 
-byte debug = true;
+byte debug = false;
 /*
 long randNumber;
 long zeit;
@@ -31,6 +31,15 @@ byte domeAutoSpeed = 70;     // Speed used when dome automation is active - Vali
 
 */
 
+//Body Positionen
+
+#define B_TOP  450 //Body Hoch
+#define B_DOWN  800 //Body Down
+#define B_CENT 620 //Boby Center
+#define D_ZONE 20 // Death Zone
+
+#define ARM_IN  40
+#define ARM_OUT 150
 
 
 //Move Sensor
@@ -43,6 +52,8 @@ int Sdiff = 0;
 
 ///PIN ARRANGEMENT
 
+
+
 #define DOME_PULSE_IN 21 //RC Signal DomeRotation
 //#define BODY_PULSE_IN 16 //RC Signal Body Move
 
@@ -52,9 +63,9 @@ int Sdiff = 0;
 #define BMOT_L 7  //L298 MotorIN3
 #define BMOT_R 4  //L298 MotorIN4
 
-//#define STATUS_PIN 16  // Body Sensor or Input Ping
+#define STATUS_PIN 16  // Body Sensor or Input Ping
 
-#define DOME_PWM_OUT 16 // Dome PWR as Controller signal
+//#define DOME_PWM_OUT 16 // Dome PWR as Controller signal
 
 #define PWM_OUT 10 // PWM POLOLU
 
@@ -67,12 +78,8 @@ int Sdiff = 0;
 #define M_RIGHT 2
 #define M_STOP 3
 
-//Body Positionen
 
-#define B_TOP  450 //Body Hoch
-#define B_DOWN  800 //Body Down
-#define B_CENT 620 //Boby Center
-#define D_ZONE 20 // Death Zone
+
 bool mov = true;
 int MO = 0;
 int tPos = B_CENT;   // Target Position Body Roll

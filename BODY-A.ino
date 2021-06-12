@@ -1,14 +1,15 @@
-///Automatische Domebewegung Steuerung
-///Doc Snyder Tool Droid DomeController
-///für Arduino pro mini new branch
+///Body Bewegungs Steuerung
+///Doc Snyder Tool Droid BODY_A
+///für Arduino pro mini
 
 #include <SoftwareSerial.h>        // Durch diesen Include können wir die Funktionen 
 #include <Servo.h>
-#include <Wire.h>  
+//#include <Wire.h>  
 SoftwareSerial MainInput(14, 15); // Pin D14 ist RX, Pin D15 ist TX.
                                    // Die Funktion softSerial() kann nun wie Serial() genutzt werden.     
 
 Servo LegMot;
+Servo ArmSrv;
 
 #include "vars.h"
 #include "Mdriver.h"
@@ -18,6 +19,7 @@ Servo LegMot;
 void setup(){
 
   LegMot.attach(PWM_OUT);
+  ArmSrv.attach(STATUS_PIN);
      
   Serial.begin(9600);
   MainInput.begin(9600);
@@ -40,7 +42,7 @@ void setup(){
   
   //startseq();
 
-   
+   ArmSrv.write(ARM_IN);
 }
 
 

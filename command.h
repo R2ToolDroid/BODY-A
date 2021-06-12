@@ -20,6 +20,19 @@ void ProzessComando() {
      Serial.println("Body to Center");
     }
     
+    if(data == "O"){
+      //LMotor(M_STOP);
+      //tPos = B_CENT;
+     Serial.println("Arm out");
+     ArmSrv.write(ARM_OUT);
+    }
+    
+    if(data == "I"){
+      //LMotor(M_STOP);
+      //tPos = B_CENT;
+     Serial.println("ARM_IN");
+     ArmSrv.write(ARM_IN);
+    }
 
     if (data == "hi-r2" )
       {             
@@ -29,9 +42,16 @@ void ProzessComando() {
       
     if (data == "stop" )
       {         
-       Serial.println("reset player");
-       
-       
+       Serial.println("detach Servo");
+       LegMot.detach();
+       ArmSrv.detach();
+      }
+
+    if (data == "start" )
+      {         
+       Serial.println("attach Servos");
+       LegMot.attach(PWM_OUT);
+       ArmSrv.attach(STATUS_PIN);
       }
 
    
@@ -61,6 +81,9 @@ void ProzessComando() {
         Serial.println(F("| D  : Body Down"));
         Serial.println(F("| T  : Body UP"));
         Serial.println(F("| C  : Body Center"));      
+        Serial.println(F("| O  : Arm Out"));
+        Serial.println(F("| I  : Arm IN"));
+        Serial.println(F("| stop  : detach Servos"));                  
         Serial.println(F("...ready for Command_"));
 
       }
