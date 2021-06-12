@@ -13,8 +13,11 @@
  stop -- detach  Pololu and Servo
  start -- attach Pololu and Servo (default on start)
  
+ ## Pin Setting
  Gripper Slider Servo on STATUS_PIN 16
  Pololu PWM on RC-OUT-V (PWM_OUT) 10
+ Leg Position Poti  PIN 9 
+ 
  
  SoftSerial to get commands (\r)
  HardSerial to get commads (\n)
